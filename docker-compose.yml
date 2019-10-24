@@ -1,0 +1,17 @@
+version: "3"
+services:
+  mongo:
+    image: "mongo"
+    ports: 
+      - "27018:27018"
+    container_name: mongo
+    volumes:
+      - "./configdb:/data/configdb"
+      - "./db/:/data/db"
+      - "./dump/:/var/dump"
+      - "./log/:/var/log"
+
+    command: --config /data/configdb/mongodb.conf --auth 
+
+
+
